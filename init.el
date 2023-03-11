@@ -14,6 +14,7 @@
 (require 'init-eglot)
 (require 'init-themes)
 (require 'init-mode-line)
+(require 'init-rust)
 
 
 ;;; init.el ends here
