@@ -10,6 +10,10 @@
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
+
+(setq custom-file (locate-user-emacs-file "custom.el"))
+
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-elpa)
 (require 'init-lisp)
@@ -19,5 +23,8 @@
 (require 'init-rust)
 (require 'init-osx)
 (require 'init-sail)
+
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;;; init.el ends here
