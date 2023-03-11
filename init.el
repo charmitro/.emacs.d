@@ -18,5 +18,6 @@
 (require 'init-mode-line)
 (require 'init-rust)
 (require 'init-osx)
+(require 'init-sail)
 
 ;;; init.el ends here
