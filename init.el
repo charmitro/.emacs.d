@@ -8,6 +8,11 @@
 (when (version< emacs-version "27.1")
   (message "Your emacs is old, and some functionality in this config will be disabled. PLease upgrade if possible."))
 
+
+;;; Disable sounds.
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
 (defconst *is-a-mac* (eq system-type 'darwin))
 
 
