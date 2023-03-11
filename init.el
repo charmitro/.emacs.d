@@ -8,6 +8,8 @@
 (when (version< emacs-version "27.1")
   (message "Your emacs is old, and some functionality in this config will be disabled. PLease upgrade if possible."))
 
+(defconst *is-a-mac* (eq system-type 'darwin))
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-elpa)
 (require 'init-lisp)
@@ -15,6 +17,6 @@
 (require 'init-themes)
 (require 'init-mode-line)
 (require 'init-rust)
-
+(require 'init-osx)
 
 ;;; init.el ends here
