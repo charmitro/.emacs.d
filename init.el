@@ -20,14 +20,26 @@
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+
+;;; Packages
 (require 'init-elpa)
-(require 'init-lisp)
-(require 'init-eglot)
-(require 'init-themes)
+
+;;; UI
 (require 'init-mode-line)
+(require 'init-themes)
+
+;;; Misc
+(require 'init-exec-path)
+
+;;; Languages
+(require 'init-eglot)
+(require 'init-lisp)
 (require 'init-rust)
-(require 'init-osx)
 (require 'init-sail)
+
+;;; System Specific
+(require 'init-osx)
 
 (when (file-exists-p custom-file)
   (load custom-file))
