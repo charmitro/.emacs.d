@@ -34,6 +34,7 @@
 
 ;;; Languages
 (require 'init-eglot)
+(require 'init-flymake)
 (require 'init-lisp)
 (require 'init-rust)
 (require 'init-sail)
