@@ -38,6 +38,7 @@
 (require 'init-lisp)
 (require 'init-rust)
 (require 'init-sail)
+(require 'init-go)
 
 ;;; System Specific
 (require 'init-osx)
