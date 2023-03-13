@@ -13,3 +13,6 @@
 *.~undo-tree
 
 custom.el
+
+/projectile-bookmarks.eld
+
