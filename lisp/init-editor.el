@@ -9,6 +9,19 @@
 (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
+;;nice scrolling
+(defun nice-scrolling-mode ()
+  (interactive)
+  (cond ((= 0 scroll-conservatively)
+	 (setq scroll-margin 0
+	       scroll-conservatively 100000
+	       scroll-preserve-screen-position 1))
+	((= 100000 scroll-conservatively)
+	(setq scroll-margin 0
+	      scroll-conservatively 0
+	      scroll-preserve-screen-position nil))))
+
+
 (provide 'init-editor)
 
 ;;; init-editor.el ends here.
