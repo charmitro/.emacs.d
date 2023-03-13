@@ -29,6 +29,9 @@
 (require 'init-mode-line)
 (require 'init-themes)
 
+;;; Editor
+(require 'init-editor)
+
 ;;; Misc
 (require 'init-exec-path)
 (require 'init-projectile)
