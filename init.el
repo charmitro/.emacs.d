@@ -35,6 +35,8 @@
 ;;; Misc
 (require 'init-exec-path)
 (require 'init-projectile)
+(require 'init-debug)
+
 ;;; Languages
 (require 'init-eglot)
 (require 'init-flymake)
