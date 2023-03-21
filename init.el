@@ -8,6 +8,7 @@
 (when (version< emacs-version "27.1")
   (message "Your emacs is old, and some functionality in this config will be disabled. PLease upgrade if possible."))
 
+(tool-bar-mode -1)
 
 ;;; Disable sounds.
 (setq visible-bell t)
@@ -15,12 +16,9 @@
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
-
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
 
 ;;; Packages
 (require 'init-elpa)
