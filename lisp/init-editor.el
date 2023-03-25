@@ -21,6 +21,7 @@
 	       scroll-conservatively 0
 	       scroll-preserve-screen-position nil))))
 
+(delete-selection-mode)
 
 (provide 'init-editor)
 
