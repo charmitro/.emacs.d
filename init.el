@@ -29,6 +29,7 @@
 
 ;;; Editor
 (require 'init-editor)
+(require 'init-corfu)
 
 ;;; Misc
 (require 'init-exec-path)
