@@ -30,6 +30,7 @@
 ;;; Editor
 (require 'init-editor)
 (require 'init-corfu)
+(require 'init-org)
 
 ;;; Misc
 (require 'init-exec-path)
