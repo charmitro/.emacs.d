@@ -3,10 +3,11 @@
 ;;; Code:
 
 (require-package 'naysayer-theme)
+(when (maybe-require-package 'tao-theme)
+  (setq-default custom-enabled-themes '(tao-yin)))
+
 
 (setq custom-safe-themes t)
-
-(setq-default custom-enabled-themes '(naysayer))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
