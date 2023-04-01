@@ -7,6 +7,8 @@
 
 (setq tab-always-indent 'complete)
 (when (maybe-require-package 'orderless)
+  (maybe-require-package 'vertico)
+  (vertico-mode)
   (with-eval-after-load 'vertico
     (require 'orderless)
     (setq completion-styles '(orderless basic))))
