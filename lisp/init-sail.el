@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2013-2018 The Sail Authors
 ;;
-;; Author: The Sail Authors
+;; Authors: [ The Sail Authors, Charalampos Mitrodimas <charmitro@gmail.com> ]
 ;; URL: http://github.com/rems-project/sail
 ;; Package-Requires: ((emacs "25"))
 ;; Version: 0.0.1
@@ -12,7 +12,7 @@
 
 ;;; License:
 
-;; 2-Clause BSD License (See LICENSE file in Sail repository)
+;;  2-Clause BSD License (See LICENSE file in Sail repository)
 
 ;;; Commentary:
 
@@ -92,7 +92,9 @@
   (setq major-mode 'sail2-mode)
   (setq mode-name "Sail2")
   (add-hook 'sail2-mode-hook
-	    (lambda () (add-hook 'after-save-hook 'sail-load nil 'local)))
+	    (lambda ()
+	      (add-hook 'before-save-hook 'whitespace-cleanup)
+	      (add-hook 'after-save-hook 'sail-load nil 'local)))
   (run-hooks 'sail2-mode-hook))
 
 (defvar sail-process nil)
