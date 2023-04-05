@@ -22,6 +22,9 @@
 
 ;;; Packages
 (require 'init-elpa)
+;;; Packages that don't require special treatment.
+(when (maybe-require-package 'nano-modeline) ; Cool modeline
+  (nano-modeline-mode 1))
 
 ;;; UI
 (require 'init-mode-line)
@@ -47,6 +50,8 @@
 
 ;;; System Specific
 (require 'init-osx)
+
+
 
 (when (file-exists-p custom-file)
   (load custom-file))
