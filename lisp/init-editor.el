@@ -2,8 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
+(when (maybe-require-package 'swiper)
+  (global-set-key "\C-s" 'swiper))
+
 (require-package 'multiple-cursors)
 ;; multiple-cursors
+;; Can this work on `-nw` emacs(i.e. terminal)? - @charmitro
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
