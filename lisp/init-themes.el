@@ -2,10 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(require-package 'naysayer-theme)
-(when (maybe-require-package 'tao-theme)
-  (setq-default custom-enabled-themes '(tao-yin)))
-
+(when (maybe-require-package 'naysayer-theme)
+  (when (display-graphic-p)
+    (setq-default custom-enabled-themes '(naysayer))))
 
 (setq custom-safe-themes t)
 
