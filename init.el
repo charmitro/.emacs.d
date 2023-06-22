@@ -44,11 +44,13 @@
 (require 'init-rust)
 (require 'init-sail)
 (require 'init-go)
+(require-package 'yaml-mode)
 
 ;;; System Specific
 (require 'init-osx)
 
-
+;;; Version Control
+(require-package 'magit)
 
 (when (file-exists-p custom-file)
   (load custom-file))
