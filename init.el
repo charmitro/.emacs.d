@@ -9,6 +9,11 @@
   (message "Your emacs is old, and some functionality in this config will be disabled. PLease upgrade if possible."))
 
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; Bigger font on 4K
+(cond ((= (x-display-pixel-width) 3840)
+       (set-face-attribute 'default nil :height 200)))
 
 ;;; Disable sounds.
 (setq visible-bell t)
