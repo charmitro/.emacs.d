@@ -27,6 +27,8 @@
 
 (delete-selection-mode)
 
+(add-hook 'diff-mode-hook 'whitespace-mode)
+
 (provide 'init-editor)
 
 ;;; init-editor.el ends here.
