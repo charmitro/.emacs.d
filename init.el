@@ -12,8 +12,9 @@
 ;; Bigger font on 4K
 
 (when (display-graphic-p)
-  (cond ((= (x-display-pixel-width) 3840)
-	 (set-face-attribute 'default nil :height 200)))
+  (if (= (x-display-pixel-width) 3840)
+      (set-face-attribute 'default nil :height 200)
+    (set-face-attribute 'default nil :height 180))
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
 
