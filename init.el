@@ -60,6 +60,9 @@
 ;;; Version Control
 (require-package 'magit)
 
+;;; Search
+(require-package 'ag)
+
 (when (file-exists-p custom-file)
   (load custom-file))
 
