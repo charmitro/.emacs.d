@@ -67,4 +67,6 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+(setq c-default-style "linux")
+
 ;;; init.el ends here
