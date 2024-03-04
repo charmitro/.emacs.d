@@ -45,6 +45,7 @@
 (require 'init-exec-path)
 (require 'init-projectile)
 (require 'init-debug)
+(require 'init-ssh)
 
 ;;; Languages
 (require 'init-eglot)
