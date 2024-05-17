@@ -29,6 +29,9 @@
 
 (add-hook 'diff-mode-hook 'whitespace-mode)
 
+(when (maybe-require-package 'ace-window)
+  (global-set-key (kbd "C-x o") 'ace-window))
+
 (provide 'init-editor)
 
 ;;; init-editor.el ends here.
