@@ -32,6 +32,18 @@
 (when (maybe-require-package 'ace-window)
   (global-set-key (kbd "C-x o") 'ace-window))
 
+;; Interactive function to copy current buffer filename.
+(defun copy-current-buffer-filename ()
+  "Copy the current buffer's filename to the clipboard."
+  (interactive)
+  (if-let ((filename (buffer-file-name)))
+      (progn
+        (kill-new filename)
+        (message "Copied buffer file name '%s' to the clipboard." filename))
+    (message "Current buffer is not visiting a file.")))
+
+(global-set-key "\C-ccb" 'copy-current-buffer-filename)
+
 (provide 'init-editor)
 
 ;;; init-editor.el ends here.
