@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(global-set-key "\C-xpd" 'buffer-contains-debug-string)
+(global-set-key "\C-xpd" 'project-contains-debug-string)
 
 (defun project-contains-debug-string ()
   "Search for the well-known Greek debug word $*@!*$ in the current project."
