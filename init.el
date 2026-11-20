@@ -13,6 +13,12 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+(global-display-line-numbers-mode 1)
+(setq tab-width 8)
+(setq c-basic-offset 8)
+(setq scroll-margin 0)
+(setq scroll-conservatively 10000)
+(setq scroll-preserve-screen-position 1)
 ;; Bigger font on 4K
 (when (display-graphic-p)
   (if (= (x-display-pixel-width) 3840)
@@ -27,10 +33,23 @@
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;;; Packages
 (require 'init-elpa)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-read-all-archive-contents)
+
+;;;; cscope
+(require 'ring)     ;; for ring-insert/ring-remove etc.
+(require 'easymenu) ;; for menus in some older packages
+(require-package 'xcscope)
+(require 'xcscope)
+(setq cscope-option-do-not-use-inverted-index t)
+(cscope-setup)
 
 ;;; UI
 (require 'init-mode-line)
@@ -45,7 +64,9 @@
 (require 'init-exec-path)
 (require 'init-projectile)
 (require 'init-debug)
+(require 'init-dape)
 (require 'init-ssh)
+(require 'init-mail)
 
 ;;; Languages
 (require 'init-eglot)
@@ -69,5 +90,6 @@
   (load custom-file))
 
 (setq c-default-style "linux")
+(setq markdown-command "pandoc")
 
 ;;; init.el ends here

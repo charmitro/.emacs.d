@@ -9,6 +9,8 @@
 (when (maybe-require-package 'orderless)
   (maybe-require-package 'vertico)
   (vertico-mode)
+  ;; Wrap around at either end of the candidate list.
+  (setq vertico-cycle t)
   (with-eval-after-load 'vertico
     (require 'orderless)
     (setq completion-styles '(orderless basic))))
@@ -22,6 +24,13 @@
     (add-hook 'eshell-mode-hook (lambda () (setq-local corfu-auto nil))))
   (setq-default corfu-quit-no-match 'separator)
   (add-hook 'after-init-hook 'global-corfu-mode)
+
+  ;; Corfu's popup is a child frame, which terminal frames can't display
+  ;; before Emacs 31, so `emacs -nw' never shows any candidates.  This
+  ;; draws the popup with overlays on tty frames and leaves GUI ones alone.
+  (when (and (< emacs-major-version 31)
+             (maybe-require-package 'corfu-terminal))
+    (add-hook 'after-init-hook 'corfu-terminal-mode))
 
   (when (featurep 'corfu-popupinfo)
     (with-eval-after-load 'corfu
